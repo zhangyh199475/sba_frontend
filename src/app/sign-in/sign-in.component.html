@@ -1,0 +1,23 @@
+<mat-card class="bottom-sheet">
+  <form [formGroup]="signinForm"
+  (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input 
+      formControlName="userName"
+      matInput
+      name="userName"
+      [(ngModel)]="userName"
+      placeholder="User Name">
+    </mat-form-field>
+    <br>
+    <mat-action-row>
+      <button
+      mat-raised-button
+      name="save"
+      type="submit"
+      >
+      Login
+      </button>
+    </mat-action-row>
+  </form>
+</mat-card>
