@@ -1,25 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import { AppRoutingModule } from './core/app-routing.module';
-import { AppComponent } from './core/app/app.component';
-import { MainComponent } from './main/main.component';
-import { MainDetailComponent } from './main-detail/main-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { CoreComponent } from './core/core.component';
+import { SharedModule } from 'src/shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsersComponent } from './users/users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
    declarations: [
       AppComponent,
-      MainComponent,
-      MainDetailComponent
+      HeaderComponent,
+      LoginComponent,
+      CoreComponent,
+      UsersComponent
    ],
    imports: [
       BrowserModule,
-      AppRoutingModule
+      AppRoutingModule,
+      SharedModule,
+      HttpClientModule,
+      FormsModule,
+      ReactiveFormsModule
+   ],
+   schemas: [
+      CUSTOM_ELEMENTS_SCHEMA
    ],
    providers: [],
    bootstrap: [
       AppComponent
-   ],
-   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+   ]
 })
 export class AppModule { }
