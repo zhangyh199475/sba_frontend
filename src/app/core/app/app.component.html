@@ -1,0 +1,78 @@
+<div style="height: 100%;">
+    <app-header></app-header>
+    <mat-sidenav-container>
+        <mat-sidenav #navigationSidenav mode="side" opened="true">
+            <mat-nav-list>
+                <ng-container>
+                    <mat-expansion-panel expanded=true>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Flight
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a [ngClass]="{active:isFlight}" mat-list-item routerLink="/home/flight-list"
+                            (click)="onClickNavBarLink()">Flight List</a>
+                    </mat-expansion-panel>
+                    <mat-divider></mat-divider>
+                </ng-container>
+                <ng-container>
+                    <mat-expansion-panel expanded=true>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Delay Codes
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a [ngClass]="{active:isDelayCode}" mat-list-item routerLink="/home/delay-codes"
+                            (click)="onClickNavBarLink()">Delay Codes</a>
+                        <a [ngClass]="{active:isDepartment}" mat-list-item routerLink="/home/department"
+                            (click)="onClickNavBarLink()">Department</a>
+                    </mat-expansion-panel>
+                    <mat-divider></mat-divider>
+                </ng-container>
+                <ng-container>
+                    <mat-expansion-panel expanded=true>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Report
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a [ngClass]="{active:isOutgoingTelex}" mat-list-item routerLink="/home/outgoing-telex"
+                            (click)="onClickNavBarLink()">Outgoing Telex</a>
+                    </mat-expansion-panel>
+                    <mat-divider></mat-divider>
+                </ng-container>
+                <ng-container>
+                    <mat-expansion-panel expanded=true>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Admin
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a [ngClass]="{active:isUser}" mat-list-item routerLink="/home/user"
+                            (click)="onClickNavBarLink()">User</a>
+                        <a [ngClass]="{active:isTransLog}" mat-list-item routerLink="/home/transaction-log"
+                            (click)="onClickNavBarLink()">Transaction Log</a>
+                    </mat-expansion-panel>
+                    <mat-divider></mat-divider>
+                </ng-container>
+                <ng-container>
+                    <mat-expansion-panel expanded=true>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Telex
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <a *ngIf="sendTelexControl" [ngClass]="{active:isSendTelex}" mat-list-item
+                            routerLink="/home/send-telex" (click)="onClickNavBarLink()">Send Telex</a>
+                        <a [ngClass]="{active:isMvtAddress}" mat-list-item routerLink="/home/movement-address"
+                            (click)="onClickNavBarLink()">Movement Address</a>
+                    </mat-expansion-panel>
+                    <mat-divider></mat-divider>
+                </ng-container>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

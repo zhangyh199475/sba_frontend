@@ -1,0 +1,24 @@
+.mat-sidenav {
+    background-color: white;
+  }
+  .mat-expansion-panel {
+    background-color: white;
+  }
+  .mat-sidenav-container {
+    height: 90%;
+  }
+  .mat-list-base {
+    padding-top: 0px;
+  }
+  .mat-list-item.active {
+    //background-image: linear-gradient(-180deg, $color-primary-white-rgb 0%, $navigation-color-hover-slate 100%);
+    border-bottom: 4px solid #006564;
+    color: #006564;
+  }
+  .mat-expansion-panel-header {
+    font-size: 16px;
+  }
+  .menu-header-link {
+    padding-left: 8px;
+    color: rgba(0, 0, 0, 0.7) !important;
+  }
