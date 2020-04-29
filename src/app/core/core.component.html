@@ -1,3 +1,53 @@
-<p>
-  core works!
-</p>
+<div style="height: 100%">
+  <app-header></app-header>
+  <!-- <mat-sidenav-container class="front-container">
+    <mat-sidenav  #sidenav mode="side" opened>
+      <mat-nav-list>
+        <div style="height: 40px;">
+          <ng-container>
+            <a mat-list-item routerLink="/home/notifications">
+            Notifications
+          </a>
+          </ng-container>
+        </div>
+        <div style="height: 40px;"> 
+          <ng-container>
+            <a mat-list-item routerLink="/home/searchTraining">
+            Search Trainings
+          </a>
+          </ng-container>
+        </div>
+        <div style="height: 40px;"> 
+          <ng-container>
+            <a mat-list-item routerLink="/home/currentTraining">
+            Current Trainings
+          </a>
+          </ng-container>
+        </div>
+        <div style="height: 40px;"> 
+          <ng-container>
+            <a mat-list-item routerLink="/home/completedTraining">
+            Completed Trainings
+          </a>
+          </ng-container>
+        </div>
+        <div style="height: 40px;"> 
+          <ng-container>
+            <a mat-list-item routerLink="/home/editSkills">
+            Edit Skills
+          </a>
+          </ng-container>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container> -->
+      <button mat-raised-button routerLink="/home/notifications">Notifications</button>
+      <button mat-raised-button routerLink="/home/searchTraining">Search Trainings</button>
+      <button mat-raised-button routerLink="/home/currentTraining">Current Trainings</button>
+      <button mat-raised-button routerLink="/home/completedTraining">Completed Trainings</button>
+      <button mat-raised-button routerLink="/home/editSkills">Edit Skills</button>
+      <router-outlet></router-outlet>
+</div>

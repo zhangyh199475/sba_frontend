@@ -10,6 +10,13 @@ import { SharedModule } from 'src/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { SearchTrainingComponent } from './searchTraining/searchTraining.component';
+import { CurrentTrainingComponent } from './currentTraining/currentTraining.component';
+import { CompletedTrainingComponent } from './completedTraining/completedTraining.component';
+import { EditSkillsComponent } from './editSkills/editSkills.component';
 
 @NgModule({
    declarations: [
@@ -17,15 +24,22 @@ import { HttpClientModule } from '@angular/common/http';
       HeaderComponent,
       LoginComponent,
       CoreComponent,
-      UsersComponent
+      UsersComponent,
+      NotificationsComponent,
+      SearchTrainingComponent,
+      CurrentTrainingComponent,
+      CompletedTrainingComponent,
+      EditSkillsComponent
    ],
    imports: [
+      BrowserAnimationsModule,
       BrowserModule,
       AppRoutingModule,
       SharedModule,
       HttpClientModule,
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      MatSidenavModule,
    ],
    schemas: [
       CUSTOM_ELEMENTS_SCHEMA

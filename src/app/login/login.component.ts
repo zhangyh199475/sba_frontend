@@ -7,11 +7,12 @@ import { Users } from '../users/users.module';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   public signinForm: FormGroup;
   public userName: string;
+  public password: string;
   public users: Users;
   constructor(
     private router: Router,
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
   initForm() {
     this.signinForm = new FormGroup({
       userName: new FormControl(this.userName),
+      password: new FormControl(this.password),
     });
   }
 

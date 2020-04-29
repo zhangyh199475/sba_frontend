@@ -8,17 +8,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
 @NgModule({
     declarations: [],
-    imports: [
-        CommonModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        MatCardModule,
-    ],
     exports: [
         BrowserAnimationsModule,
         MatButtonModule,
@@ -27,6 +22,10 @@ import { MatInputModule } from '@angular/material/input';
         MatSelectModule,
         MatCardModule,
         MatGridListModule,
+        MatListModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatTableModule,
     ],
 
 })
