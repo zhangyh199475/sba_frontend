@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { UsersService } from '../users/users.service';
-import { Users } from '../users/users.module';
+import { Users, FunctionMapping } from '../users/users.module';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   public userName: string;
   public password: string;
   public users: Users;
+  public functionMapping: FunctionMapping;
   constructor(
     private router: Router,
     private usersService: UsersService,
@@ -35,6 +36,21 @@ export class LoginComponent implements OnInit {
       this.users = result['body'];
       localStorage.setItem('users', JSON.stringify(this.users))
       console.log('this.users-->', this.users);
+
+      this.functionMapping.searchTrainingsMapping = true;
+      this.functionMapping.editSkillsMapping = false;
+      this.functionMapping.technologiesMapping = false;
+      this.functionMapping.usersMapping = false;
+      if (this.users.roleId === 1) {
+        this.functionMapping.editSkillsMapping = true;
+        this.functionMapping.technologiesMapping = true;
+        this.functionMapping.usersMapping = true;
+      } else if (this.users.roleId === 2) {
+        this.functionMapping.searchTrainingsMapping = false;
+        this.functionMapping.editSkillsMapping = true;
+      } 
+
+      localStorage.setItem('functionMapping', JSON.stringify(this.functionMapping));
       
     })
     this.router.navigate(['/home']);

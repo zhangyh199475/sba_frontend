@@ -8,6 +8,8 @@ import { SearchTrainingComponent } from './searchTraining/searchTraining.compone
 import { CurrentTrainingComponent } from './currentTraining/currentTraining.component';
 import { CompletedTrainingComponent } from './completedTraining/completedTraining.component';
 import { EditSkillsComponent } from './editSkills/editSkills.component';
+import { UsersComponent } from './users/users.component';
+import { TechnologiesComponent } from './technologies/technologies.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
     { path: 'currentTraining', component: CurrentTrainingComponent},
     { path: 'completedTraining', component: CompletedTrainingComponent},
     { path: 'editSkills', component: EditSkillsComponent},
+    { path: 'users', component: UsersComponent},
+    { path: 'technologies', component: TechnologiesComponent},
   ] },
 ];
 

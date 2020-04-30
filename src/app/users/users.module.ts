@@ -1,4 +1,4 @@
-export class Users{
+export class Users {
     public userId?: number;
     public userName?: string;
     public password?: string;
@@ -11,4 +11,11 @@ export class Users{
     public linkedinUrl?: string;
     public mentorProfile?: string;
     public expYear?: number;
+}
+
+export class FunctionMapping {
+    public searchTrainingsMapping?: boolean;
+    public editSkillsMapping?: boolean;
+    public usersMapping?: boolean;
+    public technologiesMapping?: boolean;
 }

@@ -17,6 +17,7 @@ import { SearchTrainingComponent } from './searchTraining/searchTraining.compone
 import { CurrentTrainingComponent } from './currentTraining/currentTraining.component';
 import { CompletedTrainingComponent } from './completedTraining/completedTraining.component';
 import { EditSkillsComponent } from './editSkills/editSkills.component';
+import { TechnologiesComponent } from './technologies/technologies.component';
 
 @NgModule({
    declarations: [
@@ -29,18 +30,19 @@ import { EditSkillsComponent } from './editSkills/editSkills.component';
       SearchTrainingComponent,
       CurrentTrainingComponent,
       CompletedTrainingComponent,
-      EditSkillsComponent
+      EditSkillsComponent,
+      TechnologiesComponent
    ],
    imports: [
-      BrowserAnimationsModule,
-      BrowserModule,
-      AppRoutingModule,
-      SharedModule,
-      HttpClientModule,
-      FormsModule,
-      ReactiveFormsModule,
-      MatSidenavModule,
-   ],
+	 BrowserAnimationsModule,
+	 BrowserModule,
+	 AppRoutingModule,
+	 SharedModule,
+	 HttpClientModule,
+	 FormsModule,
+	 ReactiveFormsModule,
+	 MatSidenavModule,
+	],
    schemas: [
       CUSTOM_ELEMENTS_SCHEMA
    ],

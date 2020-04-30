@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FunctionMapping } from '../users/users.module';
 
 @Component({
   selector: 'app-core',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoreComponent implements OnInit {
 
+  private functionMapping: FunctionMapping;
   constructor(
   ) { }
 
   ngOnInit() {
+    this.functionMapping = JSON.parse(localStorage.getItem('functionMapping'));
   }
 
 }
