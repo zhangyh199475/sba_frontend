@@ -1,3 +1,39 @@
-<p>
-  technologies works!
-</p>
+<div>
+  &nbsp;
+</div>
+<div class="row">
+  <button mat-raised-button name="search" type="submit" (click)="onSearch()">
+    Search
+  </button>
+</div>
+<br>
+<div class="mat-row">
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="techId"> 
+      <mat-header-cell *matHeaderCellDef>Tech ID</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.techId}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="techName"> 
+      <mat-header-cell *matHeaderCellDef>Tech Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.techName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="type"> 
+      <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.type}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="price"> 
+      <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.price}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="action"> 
+      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-raised-button (click)="toAction()" name="update"  value="update">
+          update
+        </button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

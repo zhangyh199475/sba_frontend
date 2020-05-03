@@ -1,3 +1,59 @@
-<p>
-  currentTraining works!
-</p>
+<div>
+  &nbsp;
+</div>
+<div class="row">
+  <button mat-raised-button name="search" type="submit" (click)="onSearch()">
+    Search
+  </button>
+</div>
+<br>
+<div class="mat-row">
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="techName"> 
+      <mat-header-cell *matHeaderCellDef>Tech Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.techName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="startDate"> 
+      <mat-header-cell *matHeaderCellDef>Start Date</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.startDate}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="endDate"> 
+      <mat-header-cell *matHeaderCellDef>End Date</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.endDate}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="studentName"> 
+      <mat-header-cell *matHeaderCellDef>Student Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.studentName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="mentorName"> 
+      <mat-header-cell *matHeaderCellDef>Mentor Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.mentorName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="price"> 
+      <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.price}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="currentPrice"> 
+      <mat-header-cell *matHeaderCellDef>Current Price</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.currentPrice}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="currentPercent"> 
+      <mat-header-cell *matHeaderCellDef>Current Percent</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.currentPercent}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="rate"> 
+      <mat-header-cell *matHeaderCellDef>Rate</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.rate}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="action"> 
+      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-raised-button (click)="toAction()" name="update"  value="update">
+          update
+        </button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

@@ -45,12 +45,12 @@
     </mat-sidenav-content>
   </mat-sidenav-container> -->
       <button mat-raised-button routerLink="/home/notifications">Notifications</button>
-      <button mat-raised-button routerLink="/home/searchTraining" *ngIf="functionMapping.searchTrainingsMapping">Search Trainings</button>
+      <button mat-raised-button routerLink="/home/searchTraining" *ngIf="searchTrainingsMapping">Search Trainings</button>
       <button mat-raised-button routerLink="/home/currentTraining">Current Trainings</button>
       <button mat-raised-button routerLink="/home/completedTraining">Completed Trainings</button>
       <button mat-raised-button routerLink="/home/editSkills" *ngIf="functionMapping.editSkillsMapping">Edit Skills</button>
-      <button mat-raised-button routerLink="/home/users" *ngIf="functionMapping.usersMapping">Users</button>
-      <button mat-raised-button routerLink="/home/technologies" *ngIf="functionMapping.technologiesMapping">Technologies</button>
+      <button mat-raised-button routerLink="/home/users" *ngIf="usersMapping">Users</button>
+      <button mat-raised-button routerLink="/home/technologies" *ngIf="technologiesMapping">Technologies</button>
       <br>
       <router-outlet></router-outlet>
 </div>

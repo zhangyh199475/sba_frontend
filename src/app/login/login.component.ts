@@ -36,24 +36,30 @@ export class LoginComponent implements OnInit {
       this.users = result['body'];
       localStorage.setItem('users', JSON.stringify(this.users))
       console.log('this.users-->', this.users);
+      
+      this.functionMapping = new FunctionMapping();
+      
 
       this.functionMapping.searchTrainingsMapping = true;
       this.functionMapping.editSkillsMapping = false;
       this.functionMapping.technologiesMapping = false;
       this.functionMapping.usersMapping = false;
-      if (this.users.roleId === 1) {
-        this.functionMapping.editSkillsMapping = true;
-        this.functionMapping.technologiesMapping = true;
-        this.functionMapping.usersMapping = true;
-      } else if (this.users.roleId === 2) {
-        this.functionMapping.searchTrainingsMapping = false;
-        this.functionMapping.editSkillsMapping = true;
-      } 
+      setTimeout(() => {
+        if (this.users.roleId === 1) {
+          this.functionMapping.editSkillsMapping = true;
+          this.functionMapping.technologiesMapping = true;
+          this.functionMapping.usersMapping = true;
+        } else if (this.users.roleId === 2) {
+          this.functionMapping.searchTrainingsMapping = false;
+          this.functionMapping.editSkillsMapping = true;
+        } 
 
-      localStorage.setItem('functionMapping', JSON.stringify(this.functionMapping));
+        localStorage.setItem('functionMapping', JSON.stringify(this.functionMapping));
+        
+        this.router.navigate(['/home/notifications']);
+      }, 1000);
       
     })
-    this.router.navigate(['/home']);
   }
 
 }

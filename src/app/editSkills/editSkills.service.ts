@@ -6,19 +6,15 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class EditSkillsService {
   headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS' });
-  API_URL = '//localhost:8080/users';
+  API_URL = '//localhost:8080/mentorSkills';
 
   constructor(
     private http: HttpClient
   ) { }
 
-  login(userName: string): Observable<any> {
-    return this.http.get(this.API_URL + '/login/' + userName, { headers: this.headers, observe: 'response' });
-  }
-
-  getUsersList(): Observable<any> {
-    return this.http.get(this.API_URL + '/getUsersList', { headers: this.headers, observe: 'response' });
+  searchSkills(): Observable<any> {
+    return this.http.get(this.API_URL + '/searchSkills', { headers: this.headers, observe: 'response' });
   }
 }

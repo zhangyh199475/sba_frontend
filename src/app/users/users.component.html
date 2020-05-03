@@ -1,3 +1,43 @@
-<p>
-  users works!
-</p>
+<div>
+  &nbsp;
+</div>
+<div class="row">
+  <button mat-raised-button name="search" type="submit" (click)="onSearch()">
+    Search
+  </button>
+</div>
+<br>
+<div class="mat-row">
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="userId"> 
+      <mat-header-cell *matHeaderCellDef>User Id</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.userId}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="userName"> 
+      <mat-header-cell *matHeaderCellDef>User Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.userName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="password"> 
+      <mat-header-cell *matHeaderCellDef>Password</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.password}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="roleId"> 
+      <mat-header-cell *matHeaderCellDef>Role Id</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.roleId}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email"> 
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.email}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="action"> 
+      <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-raised-button (click)="toAction()" name="update"  value="update">
+          update
+        </button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
