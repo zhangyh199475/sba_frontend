@@ -23,6 +23,7 @@ import { CurrentTrainingsDetailComponent } from './currentTrainings-detail/curre
 import { TechnologiesDetailComponent } from './technologies-detail/technologies-detail.component';
 import { MatTableModule } from '@angular/material/table';
 import { EditSkillsDetailComponent } from './editSkills-detail/editSkills-detail.component';
+import { CompletedTrainingDetailComponent } from './completedTraining-detail/completedTraining-detail.component';
 
 @NgModule({
    declarations: [
@@ -40,7 +41,8 @@ import { EditSkillsDetailComponent } from './editSkills-detail/editSkills-detail
       UsersDetailComponent,
       CurrentTrainingsDetailComponent,
       TechnologiesDetailComponent,
-      EditSkillsDetailComponent
+      EditSkillsDetailComponent,
+      CompletedTrainingDetailComponent
    ],
    imports: [
       BrowserAnimationsModule,

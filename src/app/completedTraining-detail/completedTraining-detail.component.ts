@@ -5,12 +5,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Trainings } from '../searchTraining/searchTraining.module';
 import { CurrentTrainingService } from '../currentTraining/currentTraining.service';
 
+
 @Component({
-  selector: 'app-currentTrainings-detail',
-  templateUrl: './currentTrainings-detail.component.html',
-  styleUrls: ['./currentTrainings-detail.component.scss']
+  selector: 'app-completedTraining-detail',
+  templateUrl: './completedTraining-detail.component.html',
+  styleUrls: ['./completedTraining-detail.component.scss']
 })
-export class CurrentTrainingsDetailComponent implements OnInit {
+export class CompletedTrainingDetailComponent implements OnInit {
 
   techName: string;
   startDate: string;
@@ -78,4 +79,5 @@ export class CurrentTrainingsDetailComponent implements OnInit {
     
     this.currentTrainingService.updateTraining(this.trainings).subscribe();
   }
+
 }

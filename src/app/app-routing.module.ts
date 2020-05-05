@@ -10,11 +10,11 @@ import { CompletedTrainingComponent } from './completedTraining/completedTrainin
 import { EditSkillsComponent } from './editSkills/editSkills.component';
 import { UsersComponent } from './users/users.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
-import { SearchTrainingDetailComponent } from './searchTraining-detail/searchTraining-detail.component';
 import { CurrentTrainingsDetailComponent } from './currentTrainings-detail/currentTrainings-detail.component';
 import { EditSkillsDetailComponent } from './editSkills-detail/editSkills-detail.component';
 import { UsersDetailComponent } from './users-detail/users-detail.component';
 import { TechnologiesDetailComponent } from './technologies-detail/technologies-detail.component';
+import { CompletedTrainingDetailComponent } from './completedTraining-detail/completedTraining-detail.component';
 
 
 const routes: Routes = [
@@ -23,10 +23,10 @@ const routes: Routes = [
   { path: 'home', component: CoreComponent, children: [
     { path: 'notifications', component: NotificationsComponent},
     { path: 'searchTraining', component: SearchTrainingComponent},
-    { path: 'searchTraining-detail', component: SearchTrainingDetailComponent},
     { path: 'currentTraining', component: CurrentTrainingComponent},
     { path: 'currentTraining-detail', component: CurrentTrainingsDetailComponent},
     { path: 'completedTraining', component: CompletedTrainingComponent},
+    { path: 'completedTraining-detail', component: CompletedTrainingDetailComponent},
     { path: 'editSkills', component: EditSkillsComponent},
     { path: 'editSkills-detail', component: EditSkillsDetailComponent},
     { path: 'users', component: UsersComponent},

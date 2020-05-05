@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { TechnologiesCriteria } from './searchTraining.module';
+import { TechnologiesCriteria, Trainings } from './searchTraining.module';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SearchTrainingService } from './searchTraining.service';
+import { CurrentTrainingService } from '../currentTraining/currentTraining.service';
 
 @Component({
   selector: 'app-searchTraining',
@@ -14,11 +15,13 @@ export class SearchTrainingComponent implements OnInit {
   searchTrainingForm: FormGroup;
   dataSource: MatTableDataSource<TechnologiesCriteria>;
   displayedColumns = [];
+  trainings: Trainings;
 
   constructor(
     private router: Router,
     private routerInfo: ActivatedRoute,
     private searchTrainingService: SearchTrainingService,
+    private currentTrainingService: CurrentTrainingService,
   ) { }
 
   ngOnInit() {
@@ -42,8 +45,12 @@ export class SearchTrainingComponent implements OnInit {
     })
   }
 
-  toAction(){
-    return;
+  toAction(row){
+        this.trainings.techName = row.techName;
+        this.trainings.mentorName = row.userName;
+        this.trainings.price = row.price;
+        this.trainings.studentName = JSON.parse(localStorage.getItem('users')).userName;
+        this.currentTrainingService.addTraining(this.trainings);
   }
 
 }

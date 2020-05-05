@@ -8,16 +8,16 @@ export class TechnologiesCriteria{
 }
 
 export class Trainings{
-    private trainId?: number;
-    private techName?: string;
-    private startDate?: string;
-    private endDate?: string;
-    private studentName?: string;
-    private mentorName?: string;
-    private received?: number;
-    private active?: string;
-    private price?: number;
-    private currentPrice?: number;
-    private currentPercent?: number;
-    private rate?: number;
+    public trainId?: number;
+    public techName?: string;
+    public startDate?: string;
+    public endDate?: string;
+    public studentName?: string;
+    public mentorName?: string;
+    public received?: number;
+    public active?: string;
+    public price?: number;
+    public currentPrice?: number;
+    public currentPercent?: number;
+    public rate?: number;
 }

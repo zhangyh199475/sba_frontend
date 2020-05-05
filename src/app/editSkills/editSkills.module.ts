@@ -1,6 +1,6 @@
 export class SkillsCriteria{
-    private userName?: string;
-    private techName?: string;
-    private type?: string;
-    private price?: number;
+    public userName?: string;
+    public techName?: string;
+    public type?: string;
+    public price?: number;
 }

@@ -17,4 +17,17 @@ export class CurrentTrainingService {
   searchCurrentTrainings(): Observable<any> {
     return this.http.get(this.API_URL + '/searchCurrentTrainings', { headers: this.headers, observe: 'response' });
   }
+
+  searchTrainingsByUserName(userName: string): Observable<any> {
+    return this.http.get(this.API_URL + '/searchTrainingsByUserName/' + userName, { headers: this.headers, observe: 'response' });
+  }
+
+  
+  addTraining(info: any):  Observable<any> {
+    return this.http.post(this.API_URL + '/addTraining', info, { headers: this.headers, observe: 'response', reportProgress: true });
+  }
+
+  updateTraining(info: any):  Observable<any> {
+    return this.http.put(this.API_URL + '/updateTraining', info, { headers: this.headers, observe: 'response', reportProgress: true });
+  }
 }

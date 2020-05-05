@@ -17,4 +17,18 @@ export class EditSkillsService {
   searchSkills(): Observable<any> {
     return this.http.get(this.API_URL + '/searchSkills', { headers: this.headers, observe: 'response' });
   }
+
+  
+  addSkills(info: any):  Observable<any> {
+    return this.http.post(this.API_URL + '/addSkills', info, { headers: this.headers, observe: 'response', reportProgress: true });
+  }
+
+  updateSkills(info: any): Observable<any> {
+    return this.http.put(this.API_URL + '/updateSkills', info, { headers: this.headers, observe: 'response', reportProgress: true });
+  }
+
+  deleteSkills(info: any): Observable<any> {
+    return this.http.delete(this.API_URL + '/deleteSkills/' + info, { headers: this.headers, reportProgress: true });
+  }
+
 }

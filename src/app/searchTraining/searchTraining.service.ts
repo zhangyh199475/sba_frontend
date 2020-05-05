@@ -9,12 +9,11 @@ export class SearchTrainingService {
   headers = new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS' });
   API_URL = '//localhost:8080/technologies';
 
-constructor(
-  private http: HttpClient
-) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
-searchTrainings(): Observable<any> {
-  return this.http.get(this.API_URL + '/searchTrainings', { headers: this.headers, observe: 'response' });
-}
-
+  searchTrainings(): Observable<any> {
+    return this.http.get(this.API_URL + '/searchTrainings', { headers: this.headers, observe: 'response' });
+  }
 }

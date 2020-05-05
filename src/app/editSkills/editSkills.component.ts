@@ -40,7 +40,14 @@ export class EditSkillsComponent implements OnInit {
     })
   }
 
-  toAction(){
-    return;
+  toAction(row){
+    this.router.navigate(['/home/editSkills-detail'], {
+      queryParams: {
+        userName: row.userName,
+        techName: row.techName,
+        type: row.type,
+        price: row.price,
+      }, skipLocationChange: true
+    });
   }
 }

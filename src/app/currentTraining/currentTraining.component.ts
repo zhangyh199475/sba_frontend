@@ -44,8 +44,21 @@ export class CurrentTrainingComponent implements OnInit {
     })
   }
 
-  toAction(){
-    return;
+  toAction(row){
+    this.router.navigate(['/home/currentTrainings-detail'], {
+      queryParams: {
+        techName: row.techName,
+        startDate: row.startDate,
+        endDate: row.endDate,
+        studentName: row.studentName,
+        mentorName: row.mentorName,
+        price: row.price,
+        type: row.type,
+        currentPrice: row.currentPrice,
+        currentPercent: row.currentPercent,
+        rate: row.rate,
+      }, skipLocationChange: true
+    });
   }
 
 }
