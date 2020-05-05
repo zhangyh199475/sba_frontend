@@ -27,6 +27,7 @@ export class EditSkillsComponent implements OnInit {
       'techName',
       'type',
       'price',
+      'action'
     ]
   }
 

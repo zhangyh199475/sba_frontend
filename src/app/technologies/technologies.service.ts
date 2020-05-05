@@ -18,4 +18,16 @@ searchTechnologies(): Observable<any> {
   return this.http.get(this.API_URL + '/searchTechnologies', { headers: this.headers, observe: 'response' });
 }
 
+addTechnologies(info: any):  Observable<any> {
+  return this.http.post(this.API_URL + '/addTechnologies', info, { headers: this.headers, observe: 'response', reportProgress: true });
+}
+
+updateTechnologies(info: any): Observable<any> {
+  return this.http.put(this.API_URL + '/updateTechnologies', info, { headers: this.headers, observe: 'response', reportProgress: true });
+}
+
+deleteTechnologies(techId: number): Observable<any> {
+  return this.http.delete(this.API_URL + '/deleteTechnologies/' + techId, { headers: this.headers, reportProgress: true });
+}
+
 }

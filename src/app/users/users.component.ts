@@ -41,8 +41,16 @@ export class UsersComponent implements OnInit {
     })
   }
 
-  toAction(){
-    return;
+  toAction(row){
+    this.router.navigate(['/home/users-detail'], {
+      queryParams: {
+        userId: row.userId,
+        userName: row.userName,
+        password: row.password,
+        roleId: row.roleId,
+        email: row.email,
+      }, skipLocationChange: true
+    });
   }
 
 }

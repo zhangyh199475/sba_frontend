@@ -17,6 +17,10 @@
       <mat-header-cell *matHeaderCellDef>Tech Name</mat-header-cell>
       <mat-cell *matCellDef="let row">{{row.techName}}</mat-cell>
     </ng-container>
+    <ng-container matColumnDef="active"> 
+      <mat-header-cell *matHeaderCellDef>Active</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.active}}</mat-cell>
+    </ng-container>
     <ng-container matColumnDef="type"> 
       <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
       <mat-cell *matCellDef="let row">{{row.type}}</mat-cell>
@@ -28,7 +32,7 @@
     <ng-container matColumnDef="action"> 
       <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <button mat-raised-button (click)="toAction()" name="update"  value="update">
+        <button mat-raised-button (click)="toAction(row)" name="update"  value="update">
           update
         </button>
       </mat-cell>

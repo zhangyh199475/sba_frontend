@@ -25,8 +25,10 @@ export class TechnologiesComponent implements OnInit {
     this.displayedColumns = [
       'techId',
       'techName',
+      'active',
       'type',
-      'price'
+      'price',
+      'action'
     ]
   }
 
@@ -39,7 +41,15 @@ export class TechnologiesComponent implements OnInit {
     })
   }
 
-  toAction(){
-    return;
+  toAction(row){
+    this.router.navigate(['/home/technologies-detail'], {
+      queryParams: {
+        techId: row.techId,
+        techName: row.techName,
+        type: row.type,
+        active: row.active,
+        price: row.price,
+      }, skipLocationChange: true
+    });
   }
 }

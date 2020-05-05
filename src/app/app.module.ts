@@ -18,6 +18,11 @@ import { CurrentTrainingComponent } from './currentTraining/currentTraining.comp
 import { CompletedTrainingComponent } from './completedTraining/completedTraining.component';
 import { EditSkillsComponent } from './editSkills/editSkills.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
+import { UsersDetailComponent } from './users-detail/users-detail.component';
+import { CurrentTrainingsDetailComponent } from './currentTrainings-detail/currentTrainings-detail.component';
+import { TechnologiesDetailComponent } from './technologies-detail/technologies-detail.component';
+import { MatTableModule } from '@angular/material/table';
+import { EditSkillsDetailComponent } from './editSkills-detail/editSkills-detail.component';
 
 @NgModule({
    declarations: [
@@ -31,18 +36,23 @@ import { TechnologiesComponent } from './technologies/technologies.component';
       CurrentTrainingComponent,
       CompletedTrainingComponent,
       EditSkillsComponent,
-      TechnologiesComponent
+      TechnologiesComponent,
+      UsersDetailComponent,
+      CurrentTrainingsDetailComponent,
+      TechnologiesDetailComponent,
+      EditSkillsDetailComponent
    ],
    imports: [
-	 BrowserAnimationsModule,
-	 BrowserModule,
-	 AppRoutingModule,
-	 SharedModule,
-	 HttpClientModule,
-	 FormsModule,
-	 ReactiveFormsModule,
-	 MatSidenavModule,
-	],
+      BrowserAnimationsModule,
+      BrowserModule,
+      AppRoutingModule,
+      SharedModule,
+      HttpClientModule,
+      FormsModule,
+      ReactiveFormsModule,
+      MatSidenavModule,
+      MatTableModule
+   ],
    schemas: [
       CUSTOM_ELEMENTS_SCHEMA
    ],

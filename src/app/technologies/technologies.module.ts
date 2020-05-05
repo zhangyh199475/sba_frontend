@@ -1,7 +1,7 @@
 export class Technologies{
-    private techId?: number;
-    private techName?: string;
-    private type?: string;
-    private active?: number;
-    private price?: number;
+    public techId?: number;
+    public techName?: string;
+    public type?: string;
+    public active?: number;
+    public price?: number;
 }

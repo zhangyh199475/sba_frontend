@@ -21,4 +21,16 @@ export class UsersService {
   getUsersList(): Observable<any> {
     return this.http.get(this.API_URL + '/getUsersList', { headers: this.headers, observe: 'response' });
   }
+
+  addUser(info: any): Observable<any> {
+    return this.http.post(this.API_URL + '/addUser', info, { headers: this.headers, observe: 'response', reportProgress: true });
+  }
+
+  updateUser(info: any): Observable<any> {
+    return this.http.put(this.API_URL + '/updateUser', info, { headers: this.headers, observe: 'response', reportProgress: true });
+  }
+
+  deleteUser(userId: number): Observable<any> {
+    return this.http.delete(this.API_URL + '/deleteUser/' + userId, { headers: this.headers, reportProgress: true });
+  }
 }
